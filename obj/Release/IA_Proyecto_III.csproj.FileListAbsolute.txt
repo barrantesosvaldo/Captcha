@@ -1,0 +1,15 @@
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\IA_Proyecto_III.exe.config
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\IA_Proyecto_III.exe
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\IA_Proyecto_III.pdb
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.dll
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.Video.DirectShow.dll
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.Video.dll
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.xml
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.Video.xml
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\bin\Release\AForge.Video.DirectShow.xml
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.CameraForm.resources
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.Properties.Resources.resources
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.View.MainForm.resources
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.csproj.GenerateResource.Cache
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.exe
+G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Release\IA_Proyecto_III.pdb
