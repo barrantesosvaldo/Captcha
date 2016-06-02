@@ -28,23 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cameraCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFileName = new System.Windows.Forms.Label();
             this.bnCameraCapture = new System.Windows.Forms.Button();
             this.bnLoadImage = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFileName = new System.Windows.Forms.Label();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.segmentsList = new System.Windows.Forms.ImageList(this.components);
+            this.pbSegments = new System.Windows.Forms.PictureBox();
+            this.segmentsUpDown = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSegments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segmentsUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -84,6 +90,11 @@
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openDialog);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -108,6 +119,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 87);
             this.panel1.TabIndex = 5;
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.BackColor = System.Drawing.Color.White;
+            this.lblFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFileName.Location = new System.Drawing.Point(124, 15);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(620, 25);
+            this.lblFileName.TabIndex = 8;
+            this.lblFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bnCameraCapture
             // 
@@ -141,22 +163,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Import image";
             // 
-            // lblFileName
-            // 
-            this.lblFileName.BackColor = System.Drawing.Color.White;
-            this.lblFileName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFileName.Location = new System.Drawing.Point(124, 15);
-            this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(620, 25);
-            this.lblFileName.TabIndex = 8;
-            this.lblFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -173,11 +179,37 @@
             this.toolStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStatusLabel.Text = "Ready.";
             // 
+            // segmentsList
+            // 
+            this.segmentsList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.segmentsList.ImageSize = new System.Drawing.Size(200, 200);
+            this.segmentsList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pbSegments
+            // 
+            this.pbSegments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSegments.Location = new System.Drawing.Point(158, 187);
+            this.pbSegments.Name = "pbSegments";
+            this.pbSegments.Size = new System.Drawing.Size(200, 200);
+            this.pbSegments.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSegments.TabIndex = 8;
+            this.pbSegments.TabStop = false;
+            // 
+            // segmentsUpDown
+            // 
+            this.segmentsUpDown.Location = new System.Drawing.Point(466, 274);
+            this.segmentsUpDown.Name = "segmentsUpDown";
+            this.segmentsUpDown.Size = new System.Drawing.Size(120, 20);
+            this.segmentsUpDown.TabIndex = 9;
+            this.segmentsUpDown.ValueChanged += new System.EventHandler(this.segmentsUpDown_ValueChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.segmentsUpDown);
+            this.Controls.Add(this.pbSegments);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -193,6 +225,8 @@
             this.panel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSegments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.segmentsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +248,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStatusLabel;
+        private System.Windows.Forms.ImageList segmentsList;
+        private System.Windows.Forms.PictureBox pbSegments;
+        private System.Windows.Forms.NumericUpDown segmentsUpDown;
     }
 }

@@ -17,3 +17,16 @@ G:\Os\TEC\IA - Proyecto III\IA - Proyecto III\IA_Proyecto_III\obj\Debug\IA_Proye
 G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\IA_Proyecto_III.exe.config
 G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.exe
 G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.pdb
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\IA_Proyecto_III.exe
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\IA_Proyecto_III.pdb
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.dll
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.Video.DirectShow.dll
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.Video.dll
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.xml
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.Video.xml
+G:\Os\TEC\IA - Proyecto III\Captcha\bin\Debug\AForge.Video.DirectShow.xml
+G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.csprojResolveAssemblyReference.cache
+G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.CameraForm.resources
+G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
+G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
+G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache
