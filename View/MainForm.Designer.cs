@@ -31,14 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cameraCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFileName = new System.Windows.Forms.Label();
-            this.bnCameraCapture = new System.Windows.Forms.Button();
             this.bnLoadImage = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -66,7 +64,6 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cameraCaptureToolStripMenuItem,
             this.openToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -74,32 +71,24 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // cameraCaptureToolStripMenuItem
-            // 
-            this.cameraCaptureToolStripMenuItem.Name = "cameraCaptureToolStripMenuItem";
-            this.cameraCaptureToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.cameraCaptureToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.cameraCaptureToolStripMenuItem.Text = "New camera capture";
-            this.cameraCaptureToolStripMenuItem.Click += new System.EventHandler(this.openCameraCapture);
-            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openDialog);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -113,11 +102,10 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblFileName);
-            this.panel1.Controls.Add(this.bnCameraCapture);
             this.panel1.Controls.Add(this.bnLoadImage);
             this.panel1.Location = new System.Drawing.Point(12, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 87);
+            this.panel1.Size = new System.Drawing.Size(760, 66);
             this.panel1.TabIndex = 5;
             // 
             // lblFileName
@@ -130,17 +118,6 @@
             this.lblFileName.Size = new System.Drawing.Size(620, 25);
             this.lblFileName.TabIndex = 8;
             this.lblFileName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bnCameraCapture
-            // 
-            this.bnCameraCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnCameraCapture.Location = new System.Drawing.Point(13, 44);
-            this.bnCameraCapture.Name = "bnCameraCapture";
-            this.bnCameraCapture.Size = new System.Drawing.Size(105, 25);
-            this.bnCameraCapture.TabIndex = 7;
-            this.bnCameraCapture.Text = "Camera capture";
-            this.bnCameraCapture.UseVisualStyleBackColor = true;
-            this.bnCameraCapture.Click += new System.EventHandler(this.openCameraCapture);
             // 
             // bnLoadImage
             // 
@@ -236,12 +213,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cameraCaptureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button bnCameraCapture;
         private System.Windows.Forms.Button bnLoadImage;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFileName;

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace IA_Proyecto_III.View
@@ -166,12 +160,12 @@ namespace IA_Proyecto_III.View
         }
 
         /// <summary>
-        /// 
+        /// Gets the starter position of a new segment of a character
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="image"></param>
-        /// <returns></returns>
+        /// <param name="x">Columns</param>
+        /// <param name="y">Rows</param>
+        /// <param name="image">Image source to get the starter position</param>
+        /// <returns>Starter position or -1 if isn't found</returns>
         private int getStarterPosition(int x, Bitmap image)
         {
             Color color;
@@ -188,12 +182,6 @@ namespace IA_Proyecto_III.View
             }
 
             return -1;
-        }
-
-
-        private void openCameraCapture(object sender, EventArgs e)
-        {
-            new CameraForm();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
