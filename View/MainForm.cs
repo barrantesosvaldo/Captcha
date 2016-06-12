@@ -59,6 +59,7 @@ namespace IA_Proyecto_III.View
                     pbSegments.Image = segmentsList.Images[0];
                     segmentsUpDown.Maximum = segmentsList.Images.Count-1;
                     segmentsUpDown.Value = 0;
+                    
                 }
                 catch (Exception ex)
                 {
@@ -192,6 +193,23 @@ namespace IA_Proyecto_III.View
         private void segmentsUpDown_ValueChanged(object sender, EventArgs e)
         {
             pbSegments.Image = segmentsList.Images[(int)segmentsUpDown.Value];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            train();
+        }
+        private void train()
+        {
+            int hiddenLayerSize = Int32.Parse(tbcapaoculta.Text);
+            double learningRate = double.Parse(tbtasaap.Text);
+            double variationRate = double.Parse(tbtasavar.Text);
+            int maxPeriods = Int32.Parse(tbmaxepoc.Text);
+            double maxError = double.Parse(tbminerr.Text);
+            Bitmap imaget = new Bitmap("C:/Users/Gabriel/Documents/GitHub/Captcha/iaimages/T.JPG");            
+            Bitmap imageoriginal = new Bitmap(segmentsList.Images[(int)segmentsUpDown.Value]);
+            Perceptron perceptron = new Perceptron(imageoriginal.Height, hiddenLayerSize, imaget.Height, learningRate, variationRate, maxPeriods, maxError);
+            perceptron.training(imageoriginal, imaget);
         }
     }
 }

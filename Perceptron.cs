@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 
 namespace IA_Proyecto_III
-{//perceptron = new Perceptron(trainingValues[0].length, hiddenLayerSize, desiredOutput[0].length, learningRate, variationRate, maxPeriods, maxError);
+{
     class Perceptron
     {
         
@@ -105,11 +105,11 @@ namespace IA_Proyecto_III
 
 	    public double calculateError(double[][] desiredOutput, double[][] inputs) {
 		    double error = 0;
-		    for (int i = 0; i < inputs.Length; i++) {
+		    for (int i = 0; i < desiredOutput.Length; i++) {
 
 			    double[] thisoutput = output(inputs[i]);
 
-			    for (int j = 0; j < thisoutput.Length; j++) {
+			    for (int j = 0; j < desiredOutput.Length; j++) {
 				    error += Math.Pow(desiredOutput[i][j] - thisoutput[j], 2) / 2;
 			    }
 
@@ -118,8 +118,10 @@ namespace IA_Proyecto_III
 		    return error;
 	    }
 
-	    public int training(double[][] trainingValues, double[][] desiredOutput) {
-            
+	    public int training(Bitmap trainingimage, Bitmap desiredimage) {
+
+            double[][] trainingValues = GetBitMapColorMatrix(trainingimage);
+            double[][] desiredOutput = GetBitMapColorMatrix(desiredimage);
 		    periods = 0;
 		    errors = new List<Double>();
 		    double error = 0;
@@ -134,7 +136,7 @@ namespace IA_Proyecto_III
 			    double[] V = new double[hiddenLayerSize];
 			    double[] O = new double[outputLayerSize];
 
-			    for (int e = 0; e < trainingValues.Length; e++) {
+			    for (int e = 0; e < desiredOutput.Length; e++) {
 
 				    // CALCULATE OUTPUT FORWARD
 				    for (int i = 0; i < processUnitHidden.Length; i++) {
@@ -149,7 +151,7 @@ namespace IA_Proyecto_III
 
 				    // UPDATE WEIGHTS BACKWARDS
 
-				    for (int i = 0; i < processUnitsOutput.Length; i++) {
+				    for (int i = 0; i < deltaOutputLayer.Length; i++) {
 					    deltaOutputLayer[i] = processUnitsOutput[i].delta(desiredOutput[e][i], O[i]);
 					    processUnitsOutput[i].updateWeights(V, deltaOutputLayer[i], activationOutputLayer[i]);
 				    }
@@ -174,7 +176,32 @@ namespace IA_Proyecto_III
 		    } while (error > maxError && periods < maxPeriods);
 		    return periods;
 	    }
+        public double[][] GetBitMapColorMatrix(Bitmap b1)
+        {
+            int hight = b1.Height;
+            int width = b1.Width;
+            
+
+            double[][] colorMatrix = new double[width][];
+            
+            
+            for (int i = 0; i < width; i++)
+            {
+                colorMatrix[i] = new double[hight];
+                for (int j = 0; j < hight; j++)
+                {
+                    Color black= Color.White;
+                    Color estecolor = b1.GetPixel(i, j);
+                    if (estecolor.Name == "ffffffff")
+                        colorMatrix[i][j] = 0;
+                    else
+                        colorMatrix[i][j] = 1;
+                }
+            }
+            return colorMatrix;
         }
+        }
+
     }
 
 
