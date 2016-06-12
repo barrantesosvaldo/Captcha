@@ -30,3 +30,29 @@ G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.CameraForm.resourc
 G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
 G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
 G:\Os\TEC\IA - Proyecto III\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\IA_Proyecto_III.exe.config
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.exe
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.pdb
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\IA_Proyecto_III.exe
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\IA_Proyecto_III.pdb
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.Video.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\mscorlib.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\System.Net.Http.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.xml
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.Video.xml
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\System.Net.Http.xml
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\es\mscorlib.resources.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\es\System.Net.Http.resources.dll
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normidna.nlp
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfc.nlp
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfd.nlp
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfkc.nlp
+C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfkd.nlp
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.CameraForm.resources
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
+C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache

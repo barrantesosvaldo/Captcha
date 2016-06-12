@@ -77,6 +77,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Perceptron.cs" />
+    <Compile Include="ProcessUnit.cs" />
     <Compile Include="View\CameraForm.cs">
       <SubType>Form</SubType>
     </Compile>
