@@ -18,7 +18,10 @@ namespace IA_Proyecto_III
             this.variationRate = learningRate;
             this.learningRate = variationRate;
         }
-
+        /// <summary>
+        /// getters y setters
+        /// </summary>
+        /// <returns></returns>
         public double getLearningRate()
         {
             return variationRate;
@@ -48,7 +51,10 @@ namespace IA_Proyecto_III
         {
             this.weights = weights;
         }
-
+        /// <summary>
+        /// se inicializan los pesos iniciales
+        /// </summary>
+        /// <param name="n"></param>
         public void initWeights(int n)
         {
             weights = new double[n];
@@ -60,7 +66,11 @@ namespace IA_Proyecto_III
                 previousVariation[i] = 0;
             }
         }
-
+        /// <summary>
+        /// Activacion hace el calculo que se usa en el output, multiplica los valores del imput
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <returns></returns>
         public double activation(double[] inputs)
         {
             double activation = 0;
@@ -70,27 +80,49 @@ namespace IA_Proyecto_III
             }
             return activation;
         }
-
+        /// <summary>
+        /// calcular las salidas
+        /// </summary>
+        /// <param name="activation"></param>
+        /// <returns></returns>
         public double output(double activation)
         {
             return activationFunction(activation);
         }
-
+        /// <summary>
+        /// calcular salidas
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public double activationFunction(double x)
         {
             return sigmoid(x);
         }
-
+        /// <summary>
+        /// calcular salidas
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
         public double activationFunctionDerivative(double x)
         {
             return sigmoidDerivative(x);
         }
-
+        /// <summary>
+        /// calcular coeficiente entre salida deseada y salida
+        /// </summary>
+        /// <param name="desiredOutput"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
         public double delta(double desiredOutput, double output)
         {
             return (desiredOutput - output);
         }
-
+        /// <summary>
+        /// calcular coeficientes pero en listas
+        /// </summary>
+        /// <param name="d"></param>
+        /// <param name="W"></param>
+        /// <returns></returns>
         public double delta(double[] d, double[] W)
         {
             double totalDelta = 0;
@@ -100,7 +132,12 @@ namespace IA_Proyecto_III
             }
             return totalDelta;
         }
-
+        /// <summary>
+        /// Actualizar los pesos segun el coeficientes
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <param name="delta"></param>
+        /// <param name="activation"></param>
         public void updateWeights(double[] inputs, double delta, double activation)
         {
             double variation;

@@ -21,7 +21,12 @@ namespace IA_Proyecto_III
 	    private double maxError;
 	    private double variationRate;
 	    private double learningRate;
+        public double proba=0;
 
+        /// <summary>
+        /// Getters
+        /// </summary>
+        /// <returns></returns>
 	    public double getVariationRate() {
 		    return variationRate;
 	    }
@@ -58,6 +63,17 @@ namespace IA_Proyecto_III
 		    return maxPeriods;
 	    }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="inputLayerSize"> tamaño de los parametros de entrada</param>
+        /// <param name="hiddenLayerSize">Cantidad de capas ocultas</param>
+        /// <param name="outputLayerSize">Tamaño de los parametros de salida esperados</param>
+        /// <param name="learningRate"> tasa de aprendisaje, se usa generalmente 0.9</param>
+        /// <param name="variationRate"> tasa de variacion</param>
+        /// <param name="maxPeriods"> poner un limite a las iteraciones</param>
+        /// <param name="maxError"> maximo error que se acepta</param>
+
 	    public Perceptron(int inputLayerSize, int hiddenLayerSize, int outputLayerSize, double learningRate, double variationRate, int maxPeriods, double maxError) {
 		    this.inputLayerSize = inputLayerSize;
 		    this.hiddenLayerSize = hiddenLayerSize;
@@ -67,7 +83,7 @@ namespace IA_Proyecto_III
 		    this.learningRate = learningRate;
 		    this.maxError = maxError;
 
-		    // INIT HIDDEN LAYER
+		    // inicializa las capas ocultas
 		    processUnitHidden = new ProcessUnit[hiddenLayerSize];
 
 		    for (int i = 0; i < processUnitHidden.Length; i++) {
@@ -75,7 +91,7 @@ namespace IA_Proyecto_III
 			    processUnitHidden[i].initWeights(inputLayerSize);
 		    }
 
-		    // INIT OUTPUT LAYER
+		    // inicializa las capas de salida
 
 		    processUnitsOutput = new ProcessUnit[outputLayerSize];
 
@@ -84,25 +100,35 @@ namespace IA_Proyecto_III
 			    processUnitsOutput[i].initWeights(hiddenLayerSize);
 		    }
 	    }
-
+        /// <summary>
+        /// Calculo de salidas
+        /// </summary>
+        /// <param name="input">Obtiene la entrada</param>
+        /// <returns>Retorna con el calculo de la salida</returns>
 	    public double[] output(double[] input) {
-		    // CALCULATE OUTPUT LAYER HIDDEN
+		    
 		    double[] V = new double[hiddenLayerSize];
 		    for (int i = 0; i < processUnitHidden.Length; i++) {
 			    double activation = processUnitHidden[i].activation(input);
 			    V[i] = processUnitHidden[i].output(activation);
 		    }
 
-		    // CALCULATE OUTPUT
+		    //calcular output
 		    double[] O = new double[outputLayerSize];
 		    for (int i = 0; i < processUnitsOutput.Length; i++) {
 			    double activation = processUnitsOutput[i].activation(V);
 			    O[i] = processUnitsOutput[i].output(activation);
 		    }
-
+            proba = sumarprobas(O);
 		    return O;
 	    }
 
+        /// <summary>
+        /// Calcular el error
+        /// </summary>
+        /// <param name="desiredOutput">Entrada esperada</param>
+        /// <param name="inputs">entrada recivida</param>
+        /// <returns>formula para calcular error</returns>
 	    public double calculateError(double[][] desiredOutput, double[][] inputs) {
 		    double error = 0;
 		    for (int i = 0; i < desiredOutput.Length; i++) {
@@ -117,7 +143,12 @@ namespace IA_Proyecto_III
 
 		    return error;
 	    }
-
+        /// <summary>
+        /// Entrenamiento de la red
+        /// </summary>
+        /// <param name="trainingimage">imagen de entrada</param>
+        /// <param name="desiredimage">valor esperado</param>
+        /// <returns>cantidad de iteraciones, no es necesaria pero se usa con motivos informativos</returns>
 	    public int training(Bitmap trainingimage, Bitmap desiredimage) {
 
             double[][] trainingValues = GetBitMapColorMatrix(trainingimage);
@@ -176,6 +207,12 @@ namespace IA_Proyecto_III
 		    } while (error > maxError && periods < maxPeriods);
 		    return periods;
 	    }
+
+        /// <summary>
+        /// se usa para pasar el bitmap a una matriz de double de 1.0s y 0.0s
+        /// </summary>
+        /// <param name="b1">bitmap</param>
+        /// <returns>matriz de dobles del bitmap</returns>
         public double[][] GetBitMapColorMatrix(Bitmap b1)
         {
             int hight = b1.Height;
@@ -200,6 +237,21 @@ namespace IA_Proyecto_III
             }
             return colorMatrix;
         }
+        /// <summary>
+        /// Suma de probas
+        /// </summary>
+        /// <param name="outp">outputs</param>
+        /// <returns>valor sumado</returns>
+        public double sumarprobas(double[] outp)
+        {
+            double valor = 0;
+            for (int i = 0; i < outp.Length; i++)
+            {
+                valor = valor + outp[i];
+            }
+            return valor;
+            }
+
         }
 
     }
