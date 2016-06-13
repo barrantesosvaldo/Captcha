@@ -52,7 +52,6 @@ C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfd.nlp
 C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfkc.nlp
 C:\Users\Gabriel\Documents\GitHub\Captcha\bin\Debug\normnfkd.nlp
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csprojResolveAssemblyReference.cache
-C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.CameraForm.resources
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache

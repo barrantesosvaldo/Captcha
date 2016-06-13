@@ -119,7 +119,7 @@ namespace IA_Proyecto_III
 			    double activation = processUnitsOutput[i].activation(V);
 			    O[i] = processUnitsOutput[i].output(activation);
 		    }
-            proba = sumarprobas(O);
+            //proba = sumarprobas(O);
 		    return O;
 	    }
 
@@ -135,7 +135,7 @@ namespace IA_Proyecto_III
 
 			    double[] thisoutput = output(inputs[i]);
 
-			    for (int j = 0; j < desiredOutput.Length; j++) {
+			    for (int j = 0; j < desiredOutput.Length-1&&j<thisoutput.Length; j++) {
 				    error += Math.Pow(desiredOutput[i][j] - thisoutput[j], 2) / 2;
 			    }
 
@@ -154,7 +154,18 @@ namespace IA_Proyecto_III
             double[][] trainingValues = GetBitMapColorMatrix(trainingimage);
             double[][] desiredOutput = GetBitMapColorMatrix(desiredimage);
 		    periods = 0;
+            proba = 0;
 		    errors = new List<Double>();
+            double M = 0;
+            for (int rows = 0; rows < desiredOutput.Length &&rows<trainingValues.Length; rows++)
+            {
+                for (int columns = 0; columns < trainingValues[rows].Length &&columns<desiredOutput[rows].Length; columns++)
+                {
+                    if (desiredOutput[rows][columns] == trainingValues[rows][columns])
+                        M++;
+                }
+            }
+            proba += M;
 		    double error = 0;
 		    do {
 
@@ -167,7 +178,11 @@ namespace IA_Proyecto_III
 			    double[] V = new double[hiddenLayerSize];
 			    double[] O = new double[outputLayerSize];
 
+
+                
 			    for (int e = 0; e < desiredOutput.Length; e++) {
+
+
 
 				    // CALCULATE OUTPUT FORWARD
 				    for (int i = 0; i < processUnitHidden.Length; i++) {
@@ -182,7 +197,7 @@ namespace IA_Proyecto_III
 
 				    // UPDATE WEIGHTS BACKWARDS
 
-				    for (int i = 0; i < deltaOutputLayer.Length; i++) {
+				    for (int i = 0; i < activationHiddenLayer.Length; i++) {
 					    deltaOutputLayer[i] = processUnitsOutput[i].delta(desiredOutput[e][i], O[i]);
 					    processUnitsOutput[i].updateWeights(V, deltaOutputLayer[i], activationOutputLayer[i]);
 				    }
@@ -204,7 +219,9 @@ namespace IA_Proyecto_III
 			    // CCALCULATE ERROR
 			    error = calculateError(desiredOutput, trainingValues);
 			    errors.Add(error);
+                M -= error;
 		    } while (error > maxError && periods < maxPeriods);
+            M = M / trainingValues.Length;
 		    return periods;
 	    }
 
@@ -247,7 +264,7 @@ namespace IA_Proyecto_III
             double valor = 0;
             for (int i = 0; i < outp.Length; i++)
             {
-                valor = valor + outp[i];
+                valor = outp[i];
             }
             return valor;
             }

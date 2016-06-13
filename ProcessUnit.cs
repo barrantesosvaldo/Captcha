@@ -115,7 +115,7 @@ namespace IA_Proyecto_III
         /// <returns></returns>
         public double delta(double desiredOutput, double output)
         {
-            return (desiredOutput - output);
+            return (desiredOutput * output);
         }
         /// <summary>
         /// calcular coeficientes pero en listas
