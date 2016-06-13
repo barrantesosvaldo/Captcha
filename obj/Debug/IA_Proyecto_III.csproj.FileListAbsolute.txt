@@ -55,3 +55,18 @@ C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csprojResolv
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
 C:\Users\Gabriel\Documents\GitHub\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\IA_Proyecto_III.exe.config
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.exe
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.pdb
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\IA_Proyecto_III.exe
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\IA_Proyecto_III.pdb
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.dll
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.Video.DirectShow.dll
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.Video.dll
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.xml
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.Video.xml
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\bin\Debug\AForge.Video.DirectShow.xml
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.csprojResolveAssemblyReference.cache
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.Properties.Resources.resources
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.View.MainForm.resources
+G:\Os\TEC\IA - Proyecto III\Last\Captcha\obj\Debug\IA_Proyecto_III.csproj.GenerateResource.Cache

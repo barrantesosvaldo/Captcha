@@ -56,7 +56,7 @@
             this.segmentsUpDown = new System.Windows.Forms.NumericUpDown();
             this.bnTrain = new System.Windows.Forms.Button();
             this.pbCaptcha = new System.Windows.Forms.PictureBox();
-            this.tbResult = new System.Windows.Forms.TextBox();
+            this.lbResult = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -323,21 +323,22 @@
             this.pbCaptcha.TabIndex = 11;
             this.pbCaptcha.TabStop = false;
             // 
-            // tbResult
+            // lbResult
             // 
-            this.tbResult.Location = new System.Drawing.Point(357, 282);
-            this.tbResult.Multiline = true;
-            this.tbResult.Name = "tbResult";
-            this.tbResult.Size = new System.Drawing.Size(415, 253);
-            this.tbResult.TabIndex = 12;
-            this.tbResult.Text = "Resultados";
+            this.lbResult.FormattingEnabled = true;
+            this.lbResult.Items.AddRange(new object[] {
+            "Resultados"});
+            this.lbResult.Location = new System.Drawing.Point(357, 282);
+            this.lbResult.Name = "lbResult";
+            this.lbResult.Size = new System.Drawing.Size(415, 134);
+            this.lbResult.TabIndex = 12;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 560);
-            this.Controls.Add(this.tbResult);
+            this.Controls.Add(this.lbResult);
             this.Controls.Add(this.pbCaptcha);
             this.Controls.Add(this.bnTrain);
             this.Controls.Add(this.segmentsUpDown);
@@ -395,6 +396,6 @@
         private System.Windows.Forms.TextBox tbtasaap;
         private System.Windows.Forms.TextBox tbcapaoculta;
         private System.Windows.Forms.PictureBox pbCaptcha;
-        private System.Windows.Forms.TextBox tbResult;
+        private System.Windows.Forms.ListBox lbResult;
     }
 }

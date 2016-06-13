@@ -14,7 +14,7 @@ namespace IA_Proyecto_III.View
     {
         private List<StorageCharacter> storageCharacterList;
         private List<string> charactersList;
-        private string result;
+        private static int imageSize = 64;
 
         public MainForm()
         {
@@ -65,7 +65,8 @@ namespace IA_Proyecto_III.View
         private void GenerateStorageCharacterList()
         {
             storageCharacterList = new List<StorageCharacter>();
-            DirectoryInfo currentDirectory = new DirectoryInfo(Application.StartupPath + "/iaimages/");
+            DirectoryInfo currentDirectory = new DirectoryInfo(
+                Application.StartupPath + "/iaimages/");
             int filesSize = currentDirectory.GetFiles("*.*").Count();
             int index = 0;
 
@@ -75,7 +76,7 @@ namespace IA_Proyecto_III.View
                 {
                     Bitmap bitmap = new Bitmap(archivo.FullName);
                     StorageCharacter newStorageCharacter = new StorageCharacter(
-                        bitmap, 
+                        ResizeImage(bitmap), 
                         charactersList.ElementAt(index));
                     storageCharacterList.Add(newStorageCharacter);
                     index++;
@@ -230,13 +231,13 @@ namespace IA_Proyecto_III.View
                     int imageHeight = getEndPositionRows(image, columnStart, columnEnd) - rowStart;
 
                     // Creates a new segment and add it to the list
-                    segmentsList.Images.Add(image.Clone(
+                    segmentsList.Images.Add(ResizeImage(image.Clone(
                         new Rectangle(
                             columnStart, 
                             rowStart, 
                             (columnEnd-columnStart), 
                             imageHeight), 
-                        image.PixelFormat));
+                        image.PixelFormat)));
 
                     i = getStartPositionColumns(i, image);
                     columnStart = i;
@@ -330,9 +331,8 @@ namespace IA_Proyecto_III.View
         /// <returns>The resized image.</returns>
         public static Bitmap ResizeImage(Bitmap image)
         {
-            int size = 64;
-            var destRect = new Rectangle(0, 0, size, size);
-            var destImage = new Bitmap(size, size);
+            var destRect = new Rectangle(0, 0, imageSize, imageSize);
+            var destImage = new Bitmap(imageSize, imageSize);
 
             destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
@@ -364,9 +364,9 @@ namespace IA_Proyecto_III.View
         {
             int matches = 0;
 
-            for (int rows = 0; rows < 64; rows++)
+            for (int rows = 0; rows < imageSize; rows++)
             {
-                for (int columns = 0; columns < 64; columns++)
+                for (int columns = 0; columns < imageSize; columns++)
                 {
                     if (captchaCharacter.GetPixel(columns, rows) == 
                         storageCharacter.GetPixel(columns, rows))
@@ -381,27 +381,30 @@ namespace IA_Proyecto_III.View
 
         private void generateInference()
         {
-            result = "Los resultados de la inferencia son los siguientes:";
+            lbResult.Items.Clear();
+
+            lbResult.Items.Add("Los resultados de la inferencia son los siguientes:");
             StorageCharacter storageCharacter = null;
             float matches = 0, percent = 0;
 
             for (int i = 0; i < segmentsList.Images.Count; i++)
             {
-                result += "\nPosibilidades para el primer caracter del captcha:";
+                lbResult.Items.Add("\n   Posibilidades para el caracter " + i + " del captcha:");
 
                 for (int j = 0; j < storageCharacterList.Count; j++)
                 {
                     storageCharacter = storageCharacterList.ElementAt(j);
                     matches = inference(ResizeImage((Bitmap)segmentsList.Images[i]), 
                                         ResizeImage(storageCharacter.getBitmap()));
-                    percent = matches * 100 / 4096;
+                    percent = matches * 100 / (imageSize * imageSize);
+
                     if (matches > 500)
                     {
-                        result += "\nCon un %" + percent + "de probabilidades: " + storageCharacter.getCharacterString();
+                        lbResult.Items.Add("\n      Con un %" + percent + " de probabilidades: " + 
+                            storageCharacter.getCharacterString());
                     }
                 }
             }
-            tbResult.Text = result;
         }
 
         
@@ -428,18 +431,19 @@ namespace IA_Proyecto_III.View
             double learningRate = double.Parse(tbtasaap.Text);
             double variationRate = double.Parse(tbtasavar.Text);
             int maxPeriods = Int32.Parse(tbmaxepoc.Text);
-            double maxError = double.Parse(tbminerr.Text);
-            Bitmap imaget = new Bitmap("C:/Users/Gabriel/Documents/GitHub/Captcha/iaimages/T.JPG");            
+            double maxError = double.Parse(tbminerr.Text);            
             Bitmap imageoriginal = new Bitmap(segmentsList.Images[(int)segmentsUpDown.Value]);
             Perceptron perceptron = new Perceptron( imageoriginal.Height, 
-                                                    hiddenLayerSize, 
-                                                    imaget.Height, 
+                                                    hiddenLayerSize,
+                                                    imageSize, 
                                                     learningRate, 
                                                     variationRate, 
                                                     maxPeriods, 
                                                     maxError);
-            perceptron.training(imageoriginal, imaget);
-            tbResult.Text += "\n La red neuronal concluyo que la parabra es: "+getbest(storageCharacterList, segmentsList, perceptron);
+
+            lbResult.Items.Add("");
+            lbResult.Items.Add("\n La red neuronal concluyo que la parabra es: " + 
+                getbest(storageCharacterList, segmentsList, perceptron));
             
         }
    
